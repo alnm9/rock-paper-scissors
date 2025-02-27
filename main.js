@@ -6,6 +6,8 @@
 //                                      ->increment one of the score variables based on the winner.
 // The "playRound" function loops 5 times, each time adding to one of the score variables
 // After the loop is done, the "playGame" function stops and calls for a winner
+
+
 function getHumanChoice() {
     let choice = prompt("Choose Rock, Paper or Scissors");
     let newChoice = choice.slice(0, 1).toUpperCase() + choice.slice(1).toLowerCase();
@@ -32,13 +34,9 @@ function getComputerChoice() {
     }
 }
 
+
+
 function playGame() {
-
-
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-
-    console.log(`Human:${humanSelection}\nComputer:${computerSelection}`)
 
     let humanScore = 0;
     let computerScore = 0;
@@ -63,14 +61,25 @@ function playGame() {
             console.log("You win, scissors beats paper!");
             humanScore++;
         } else if (humanChoice == computerChoice) {
-            console.log("Try again!")
+            console.log("No points!")
         }
+
+    }
+
+    for (i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        console.log(`Human:${humanSelection}\nComputer:${computerSelection}`)
         console.log(`Human: ${humanScore}\nComputer:${computerScore}`);
     }
 
-    playRound(humanSelection, computerSelection);
-
+    if (humanScore > computerScore) {
+        console.log("You win!");
+    } else {
+        console.log("You lose!");
+    }
 }
 
-playGame()
 
+playGame()
