@@ -35,29 +35,33 @@ const getComputerChoice = () => {
 
 
 function playRound(humanChoice, computerChoice) {
+    let humanScore = 0;
+    let computerScore = 0;
     console.log(`Human:${humanChoice}\nComputer:${computerChoice}`)
 
     if (humanChoice == "Rock" && computerChoice == "Paper") {
         console.log("You lose, paper beats rock!");
-        // computerScore++;
+        computerScore++;
     } else if (humanChoice == "Rock" && computerChoice == "Scissors") {
         console.log("You win, rock beats scissors!");
-        // humanScore++;
+        humanScore++;
     } else if (humanChoice == "Paper" && computerChoice == "Rock") {
         console.log("You win, paper beats rock!");
-        // humanScore++;
+        humanScore++;
     } else if (humanChoice == "Paper" && computerChoice == "Scissors") {
         console.log("You lose, scissors beats paper!");
-        // computerScore++;
+        computerScore++;
     } else if (humanChoice == "Scissors" && computerChoice == "Rock") {
         console.log("You lose, rock beats scissors!");
-        // computerScore++;
+        computerScore++;
     } else if (humanChoice == "Scissors" && computerChoice == "Paper") {
         console.log("You win, scissors beats paper!");
-        // humanScore++;
+        humanScore++;
     } else if (humanChoice == computerChoice) {
         console.log("No points!")
     }
+    container.textContent = `Human: ${humanScore}\nComputer:${computerScore}`;
+    console.log(`Human: ${humanScore}\nComputer:${computerScore}`);
 }
 
 
