@@ -1,0 +1,38 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#things {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* gap: 200px; */
+    width: 800px;
+    height: 600px;
+}
+
+#containers {
+    display: flex;
+    gap: 300px;
+    justify-content: center;
+}
+
+#messages {
+    text-align: center;
+    font-size: 25px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+button {
+    width: 180px;
+    height: 90px;
+}
