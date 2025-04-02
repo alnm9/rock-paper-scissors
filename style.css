@@ -4,26 +4,33 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: monospace;
+    background-image: url("body-image.png");
+    background-size: cover;
 }
 
 #things {
     display: flex;
+    background-color: rgba(247, 231, 182, 0.788);
+    border: 2px rgb(184, 142, 223) solid;
+    border-radius: 20%;
+    padding: 150px;
     flex-direction: column;
     justify-content: space-between;
-    /* gap: 200px; */
     width: 800px;
     height: 600px;
 }
 
 #containers {
     display: flex;
-    gap: 300px;
+    gap: 400px;
+    font-size: 14px;
     justify-content: center;
 }
 
 #messages {
     text-align: center;
-    font-size: 25px;
+    font-size: 26px;
 }
 
 #buttons {
@@ -33,6 +40,16 @@ body {
 }
 
 button {
-    width: 180px;
+    width: 200px;
     height: 90px;
+    border-radius: 20px;
+    border: 2px rgb(172, 93, 201) dotted;
+    font-size: 20px;
+    font-family: monospace;
+    background-color: rgba(0, 137, 228, 0.493);
+}
+
+button:hover {
+    background-color: rgba(0, 137, 228, 0.726);
+    cursor: pointer;
 }
