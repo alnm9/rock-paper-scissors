@@ -5,26 +5,15 @@ const container = document.querySelector("#container");
 const container2 = document.querySelector("#container2");
 const messages = document.querySelector("#messages");
 
-// const playBtn = document.querySelector("#playGame");
-
+let humanScore = 0;
+let computerScore = 0;
 
 container.setAttribute('style', 'white-space: pre;');
 container2.setAttribute('style', 'white-space: pre;');
 
-// playBtn.addEventListener("click", () => {
-
-//     alert("The game has begun!");
-//     playGame();
-
-// });
-
-
-
-
-// function playGame() {
-
-let humanScore = 0;
-let computerScore = 0;
+if (messages.textContent == "") {
+    messages.textContent = "Press a button to start the game!";
+}
 
 
 rockBtn.addEventListener("click", () => {
@@ -44,6 +33,21 @@ scissorsBtn.addEventListener("click", () => {
     playRound(choice, getComputerChoice());
     checkScore();
 })
+
+const getComputerChoice = () => {
+    let choice = Math.floor(Math.random() * 3) + 1;
+    switch (choice) {
+        case 1:
+            return "Rock";
+            break;
+        case 2:
+            return "Paper";
+            break;
+        case 3:
+            return "Scissors";
+            break;
+    }
+}
 
 function playRound(humanChoice, computerChoice) {
 
@@ -88,33 +92,20 @@ function checkScore() {
 
     if (humanScore == 5) {
         alert("Congratulations! You won!");
-        humanScore = 0;
-        computerScore = 0;
+        resetData();
 
     } else if (computerScore == 5) {
         alert("Better luck next time!");
-        humanScore = 0;
-        computerScore = 0;
+        resetData();
     }
 
 }
 
 
-// }
-
-const getComputerChoice = () => {
-    let choice = Math.floor(Math.random() * 3) + 1;
-    switch (choice) {
-        case 1:
-            return "Rock";
-            break;
-        case 2:
-            return "Paper";
-            break;
-        case 3:
-            return "Scissors";
-            break;
-    }
+function resetData() {
+    humanScore = 0;
+    computerScore = 0;
+    container.textContent = "";
+    container2.textContent = "";
+    messages.textContent = "Press a button to start the game!";
 }
-
-
